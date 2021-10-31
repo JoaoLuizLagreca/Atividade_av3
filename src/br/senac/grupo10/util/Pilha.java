@@ -42,7 +42,7 @@ public class Pilha <Tipo>{
 	@SuppressWarnings("unchecked")
 	public Tipo get(int i) {
 		if(i>pos) throw new IndexOutOfBoundsException();
-		return (Tipo) vetor[i];
+		return (Tipo) vetor[pos-i];
 	}
 	
 	/**Retorna a capacidade da pilha*/
