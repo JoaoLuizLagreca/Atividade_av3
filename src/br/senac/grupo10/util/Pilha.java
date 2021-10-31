@@ -50,4 +50,9 @@ public class Pilha <Tipo>{
 		return vetor.length;
 	}
 	
+	/**Retorna o taanho da pilha (capacidade utilizada)*/
+	public int size() {
+		return pos+1;
+	}
+	
 }
