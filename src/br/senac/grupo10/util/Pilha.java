@@ -1,6 +1,5 @@
 package br.senac.grupo10.util;
 
-//FIXME: testar pilha
 public class Pilha <Tipo>{
 
 	private Object[] vetor;
