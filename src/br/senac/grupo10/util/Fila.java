@@ -82,6 +82,16 @@ public class Fila<Tipo> {
 		else
 			return select.valor;
 		
+		if(index==0) {
+			select=inicio;
+			pos=0;
+			return select.valor;
+		}else if(index==size()-1) {
+			select=fim;
+			pos=size()-1;
+			return select.valor;
+		}
+		
 		for(int i=pos; i!=index; i+=inc)
 			if(inc>0)
 				next();
