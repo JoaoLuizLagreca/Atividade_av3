@@ -120,6 +120,18 @@ public class Fila<Tipo> {
 		return select.valor;
 	}
 	
+	/**Clona a fila com novos nós de mesmos valores*/
+	public Fila<Tipo> clone(){
+		Fila<Tipo> f = new Fila<Tipo>();
+		
+		Tipo a=get(0);
+		f.add(a);
+		for(int i=0; i<size()-1; i++) {
+			a=next();
+			f.add(a);
+		}
+		return f;
+	}
 	//TODO: Criar furaFila(). Opcional.
 
 }
