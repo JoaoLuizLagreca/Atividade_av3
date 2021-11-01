@@ -9,6 +9,7 @@ public class Main {
 	private static float NOTA_MINIMA=5.0f;
 	
 	private static Fila<Aluno> alunos = new Fila<Aluno>();
+	private static Fila<Aluno> aprovados;
 	static { //FIXME: Testar valores
 		
 		alunos.add(new Aluno(9.5f, "Elisangela"));
@@ -42,15 +43,22 @@ public class Main {
 		alunos.add(new Aluno(8.5f, "Denise"));
 		alunos.add(new Aluno(7.0f, "Rosana"));
 	
+		aprovados = alunos.clone();
+		for(int i=aprovados.size()-1; i>=0; i--) {
+			if(aprovados.get(i).nota<NOTA_MINIMA)
+				aprovados.remove(aprovados.getNo());
+		}
 		
 	}
 	
 	public static void main(String args[]) {
 		
-		for(int i=0; i<alunos.size(); i++) {
-			Aluno a=alunos.get(i);
+		Aluno a=aprovados.get(0);
+		for(int i=0; i<aprovados.size()-1; i++) {
 			System.out.println(a.nota+" "+a.nome);
+			a=aprovados.next();
 		}
+		System.out.println(a.nota+" "+a.nome);
 		System.out.println();
 		
 	}
