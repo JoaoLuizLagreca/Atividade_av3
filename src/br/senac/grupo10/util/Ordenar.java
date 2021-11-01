@@ -62,6 +62,8 @@ public class Ordenar {
 		
 		if(alunos.size()<=1) return; //Encerra se a lista tiver nenhum ou 0 elementos
 		
+		int pos=alunos.position();
+		
 		alunos.get(0);
 		alunos.next(); //Começar na posição 1 (usar get(0) e next() é mais rápido que get(1))
 		a=alunos.getNo();
@@ -75,18 +77,29 @@ public class Ordenar {
 			if(b!=c) { //Se encontrado um valor menor
 				//Mudar a referência ant e prox de seus nós, mudando a localização de todos os seus valores na fila do ponto b até a(c)
 				
-				cp=c.prox;
-				ca=c.ant;
-				ba=b.ant;
-				if(cp!=null) c.prox.ant = c.ant;
-				c.ant=b.ant;
-				b.ant=c;
+				ca = c.ant;
+				cp = c.prox;
+				ba = b.ant;
+				
+				if(cp!=null)cp.ant = ca;
+				c.ant=ba;
+				b.ant = c;
 				c.prox=b;
-				ca.prox=cp;
-				if(ba!=null) ba.prox=c;
+				if(ca!=null)ca.prox = cp;
+				if(ba!=null)ba.prox = c;
+				
+				if(cp==null) 
+					alunos.fim=ca;
+				if(ba==null)
+					alunos.inicio=c;
+				
 			}
 			
 		}
+		
+		//Reiniciar buscador para prevenir bugs
+		alunos.get(0);
+		alunos.get(pos);
 	}
 
 }

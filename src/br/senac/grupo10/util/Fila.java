@@ -8,7 +8,8 @@ public class Fila<Tipo> {
 		private Fila<Tipo> fila;
 	}
 	
-	private nó<Tipo> inicio, fim, select;
+	public nó<Tipo> inicio, fim;
+	private nó<Tipo> select;
 	private int pos, tamanho;
 	
 	public Fila() {
