@@ -17,8 +17,7 @@ public class Fila<Tipo> {
 	}
 	
 	/**Adiciona um nó com o designado valor*/
-	public void add(nó<Tipo> n, Tipo valor) {
-		n.valor=valor;
+	public void add(nó<Tipo> n) {
 		n.prox=null;
 		n.ant = fim;
 		if(fim!=null) fim.prox=n;
@@ -34,7 +33,8 @@ public class Fila<Tipo> {
 	/**Adiciona um valor, retornando seu nó*/
 	public nó<Tipo> add(Tipo valor) {
 		nó<Tipo> n = new nó<Tipo>();
-		add(n, valor);
+		n.valor=valor;
+		add(n);
 		
 		return n;
 	}
