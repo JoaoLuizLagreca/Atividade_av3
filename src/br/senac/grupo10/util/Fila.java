@@ -85,13 +85,6 @@ public class Fila<Tipo> {
 	
 	/**Retorna o nó de um designado índice da fula*/
 	public nó<Tipo> getNo(int index){
-		int inc;
-		if(index>pos) 
-			inc=1;
-		else if(index<pos)
-			inc=-1;
-		else
-			return select;
 		
 		if(index==0) {
 			select=inicio;
@@ -102,6 +95,14 @@ public class Fila<Tipo> {
 			pos=size()-1;
 			return select;
 		}
+		
+		int inc;
+		if(index>pos) 
+			inc=1;
+		else if(index<pos)
+			inc=-1;
+		else
+			return select;
 		
 		for(int i=pos; i!=index; i+=inc)
 			if(inc>0)
