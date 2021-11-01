@@ -4,7 +4,7 @@ import br.senac.grupo10.util.Fila.nó;
 
 public class Ordenar {
 	
-	/**Trocas*/
+	/**Ordenação de Trocas*/
 	public static void bubbleSort(Fila<Aluno> alunos) {
 		nó<Aluno> a;
 		Aluno al;
@@ -27,7 +27,7 @@ public class Ordenar {
 		}
 	}
 	
-	/**Seleção*/
+	/**Ordenação de Seleção*/
 	public static void selectionSort(Fila<Aluno> alunos) {
 		nó<Aluno> a, b;
 		Aluno al;
@@ -56,7 +56,7 @@ public class Ordenar {
 		
 	}
 	
-	/**Inserção*/
+	/**Ordenação de Inserção*/
 	public static void insertionSort(Fila<Aluno> alunos) {
 		nó<Aluno> a, b, c, cp, ca, ba;
 		

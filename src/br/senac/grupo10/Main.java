@@ -2,6 +2,7 @@ package br.senac.grupo10;
 
 import br.senac.grupo10.util.Aluno;
 import br.senac.grupo10.util.Fila;
+import br.senac.grupo10.util.Ordenar;
 
 public class Main {
 	
@@ -9,7 +10,7 @@ public class Main {
 	
 	private static Fila<Aluno> alunos = new Fila<Aluno>();
 	private static Fila<Aluno> aprovados;
-	static { //FIXME: Testar valores
+	static {
 		
 		alunos.add(new Aluno(9.5f, "Elisangela"));
 		alunos.add(new Aluno(7.5f, "Nair"));
@@ -52,6 +53,11 @@ public class Main {
 	
 	public static void main(String args[]) {
 		
+		
+		//FIXME: Remover linhas e implementar código do que foi pedido
+		//AS linhas abaixo foram criadas só para testar os dados e os algoritimos de ordenação
+		Ordenar.insertionSort(aprovados);
+		
 		Aluno a=aprovados.get(0);
 		for(int i=0; i<aprovados.size()-1; i++) {
 			System.out.println(a.nota+" "+a.nome);
@@ -59,6 +65,20 @@ public class Main {
 		}
 		System.out.println(a.nota+" "+a.nome);
 		System.out.println();
+		///
+		
+		//TODO: Implementar menu de seleção de opções iniciais:
+		/*
+		 * Listar alunos (sem ordenação)
+		 * Ordenar alunos
+		 * Pesquisar aluno
+		 * Sair
+		 */
+		
+		//TODO: Implementar menu de opções de ordenações
+		
+		//TODO: Implementar menu de opções de pesquisa
+		//O usuário deve poder pesquisar o aluno pelo nome, e o programa exibirá sue nome e sua nota sem exibir a lista inteira
 		
 	}
 
