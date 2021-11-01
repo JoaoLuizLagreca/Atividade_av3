@@ -97,9 +97,7 @@ public class Ordenar {
 			
 		}
 		
-		//Reiniciar buscador para prevenir bugs
-		alunos.get(0);
-		alunos.get(pos);
+		alunos.get(0);//Reiniciar buscador para prevenir bugs
 	}
 
 }
