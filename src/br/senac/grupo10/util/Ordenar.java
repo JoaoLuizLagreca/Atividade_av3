@@ -57,8 +57,36 @@ public class Ordenar {
 	}
 	
 	/**Inserção*/
-	public static void insertionSort(String a[]) {
-		//TODO: Ordenação por inserção
+	public static void insertionSort(Fila<Aluno> alunos) {
+		nó<Aluno> a, b, c, cp, ca, ba;
+		
+		if(alunos.size()<=1) return; //Encerra se a lista tiver nenhum ou 0 elementos
+		
+		alunos.get(0);
+		alunos.next(); //Começar na posição 1 (usar get(0) e next() é mais rápido que get(1))
+		a=alunos.getNo();
+		for(int i=1; i<alunos.size(); i++) { //À cada nó, da esquerda pra direita
+			b=a;
+			while(b.ant!=null && b.ant.valor.nota < a.valor.nota) { //Encontrar o último menor valor à esquerda
+				b=b.ant;
+			}
+			c=a;
+			a=a.prox;
+			if(b!=c) { //Se encontrado um valor menor
+				//Mudar a referência ant e prox de seus nós, mudando a localização de todos os seus valores na fila do ponto b até a(c)
+				
+				cp=c.prox;
+				ca=c.ant;
+				ba=b.ant;
+				if(cp!=null) c.prox.ant = c.ant;
+				c.ant=b.ant;
+				b.ant=c;
+				c.prox=b;
+				ca.prox=cp;
+				if(ba!=null) ba.prox=c;
+			}
+			
+		}
 	}
 
 }
