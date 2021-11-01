@@ -28,8 +28,32 @@ public class Ordenar {
 	}
 	
 	/**Seleção*/
-	public static void selectionSort(String a[]) {
-		//TODO: Ordenação por seleção
+	public static void selectionSort(Fila<Aluno> alunos) {
+		nó<Aluno> a, b;
+		Aluno al;
+		nó<Aluno> menor;
+		alunos.get(0);
+		for(int i=0; i<alunos.size()-1; i++) {
+			a=alunos.getNo();
+			b=a;
+			menor=a;
+			for(int j=i; j<alunos.size()-1; j++) { //Verificar na fila a partir do i
+				
+				b=b.prox;
+				if(menor.valor.nota<b.valor.nota) //Encontrado um valor maior que o anteriormente encontrado
+					menor=b;
+				
+			}
+			
+			if(menor!=a) { //Realizar a troca caso encontrado um maior
+				al=a.valor;
+				a.valor=menor.valor;
+				menor.valor=al;
+			}
+			
+			alunos.next();
+		}
+		
 	}
 	
 	/**Inserção*/
