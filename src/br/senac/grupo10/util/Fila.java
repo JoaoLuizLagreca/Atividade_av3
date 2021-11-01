@@ -72,24 +72,34 @@ public class Fila<Tipo> {
 		return select.valor;
 	}
 	
+	/**Retorna o nó da posição atual da Fila*/
+	public nó<Tipo> getNo(){
+		return select;
+	}
+	
 	/**Retorna o valor de um designado índice da fila*/
 	public Tipo get(int index) {
+		return getNo(index).valor;
+	}
+	
+	/**Retorna o nó de um designado índice da fula*/
+	public nó<Tipo> getNo(int index){
 		int inc;
 		if(index>pos) 
 			inc=1;
 		else if(index<pos)
 			inc=-1;
 		else
-			return select.valor;
+			return select;
 		
 		if(index==0) {
 			select=inicio;
 			pos=0;
-			return select.valor;
+			return select;
 		}else if(index==size()-1) {
 			select=fim;
 			pos=size()-1;
-			return select.valor;
+			return select;
 		}
 		
 		for(int i=pos; i!=index; i+=inc)
@@ -98,26 +108,35 @@ public class Fila<Tipo> {
 			else
 				prev();
 		
-		return select.valor;
-		
+		return select;
 	}
 	
 	/**Busca o próximo valor*/
 	public Tipo next() {
+		return nextNo().valor;
+	}
+	
+	/**Busca o próximo nó*/
+	public nó<Tipo> nextNo(){
 		if(select==null || select.prox==null)
 			throw new IndexOutOfBoundsException("Estouro da fila");
 		pos++;
 		select=select.prox;
-		return select.valor;
+		return select;
 	}
 	
 	/**Busca o valor anterior*/
 	public Tipo prev() {
+		return prevNo().valor;
+	}
+	
+	/**Busca o nó anterior*/
+	public nó<Tipo> prevNo(){
 		if(select==null || select.ant==null)
 			throw new IndexOutOfBoundsException("Estouro da fila");
 		pos--;
 		select=select.ant;
-		return select.valor;
+		return select;
 	}
 	
 	/**Clona a fila com novos nós de mesmos valores*/
