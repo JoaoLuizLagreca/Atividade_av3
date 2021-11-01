@@ -1,17 +1,9 @@
 package br.senac.grupo10;
 
+import br.senac.grupo10.util.Aluno;
 import br.senac.grupo10.util.Pilha;
 
 public class Main {
-	
-	static class Aluno{
-		Aluno(float nota, String nome){
-			this.nota=nota;
-			this.nome=nome;
-		}
-		float nota;
-		String nome;
-	}
 	
 	
 	private static Pilha<Aluno> alunos=new Pilha<Aluno>(30);
