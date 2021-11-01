@@ -62,8 +62,6 @@ public class Ordenar {
 		
 		if(alunos.size()<=1) return; //Encerra se a lista tiver nenhum ou 0 elementos
 		
-		int pos=alunos.position();
-		
 		alunos.get(0);
 		alunos.next(); //Começar na posição 1 (usar get(0) e next() é mais rápido que get(1))
 		a=alunos.getNo();
