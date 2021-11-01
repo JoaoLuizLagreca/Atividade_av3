@@ -2,7 +2,6 @@ package br.senac.grupo10;
 
 import br.senac.grupo10.util.Aluno;
 import br.senac.grupo10.util.Fila;
-import br.senac.grupo10.util.Pilha;
 
 public class Main {
 	
